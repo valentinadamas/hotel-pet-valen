@@ -3,51 +3,42 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <nav
-    class="navbar navbar-expand-md navbar-dark bg-success"
-    aria-label="Navegação principal"
-  >
-    <div class="container-fluid">
+  <nav aria-label="Menu da PetSchool">
+    <div class="nav flex-column nav-pills gap-1">
       <RouterLink
-        class="navbar-brand fw-semibold"
+        class="nav-link"
+        active-class="active"
         to="/pets"
       >
         <i
-          class="bi bi-heart-fill me-2"
+          class="bi bi-heart me-2"
           aria-hidden="true"
         ></i>
-        PetSchool
+        Pets
       </RouterLink>
 
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#petschool-navbar"
-        aria-controls="petschool-navbar"
-        aria-expanded="false"
-        aria-label="Abrir menu principal"
+      <RouterLink
+        class="nav-link"
+        active-class="active"
+        to="/pets/novo"
       >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+        <i
+          class="bi bi-plus-circle me-2"
+          aria-hidden="true"
+        ></i>
+        Novo pet
+      </RouterLink>
 
-      <div
-        id="petschool-navbar"
-        class="collapse navbar-collapse"
+      <span
+        class="nav-link text-body-secondary"
+        aria-disabled="true"
       >
-        <div class="navbar-nav ms-auto">
-          <RouterLink
-            class="nav-link"
-            to="/pets"
-            >Pets</RouterLink
-          >
-          <RouterLink
-            class="nav-link"
-            to="/pets/novo"
-            >Novo pet</RouterLink
-          >
-        </div>
-      </div>
+        <i
+          class="bi bi-people me-2"
+          aria-hidden="true"
+        ></i>
+        Tutores <small class="ms-1">(em breve)</small>
+      </span>
     </div>
   </nav>
 </template>
